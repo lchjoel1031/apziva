@@ -36,7 +36,7 @@ xgacc = metrics.accuracy_score(y_true, y_pred)
 print("XGBoost accuracy: ", xgacc)
 
 #save trained model
-with open("model/xgboost_model.pkl", 'wb') as f:
+with open("../model/xgboost_model.pkl", 'wb') as f:
             pickle.dump(
                 xgb_clas,
                 f,
