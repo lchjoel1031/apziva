@@ -18,7 +18,7 @@ os.system('mkdir model')
 os.system('mkdir data')
 
 #read dataset
-data = '/content/drive/MyDrive/ACME-HappinessSurvey2020.csv'
+data = '../data/ACME-HappinessSurvey2020.csv'
 df = pd.read_csv(data)
 
 #prepare training and test data
