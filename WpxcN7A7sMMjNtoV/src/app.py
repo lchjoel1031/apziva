@@ -23,8 +23,8 @@ df.sort_values(by=['fit'],ascending=False).head()
 
 #rerank with starred candidate: 
 starred_candidate_id=17
-keyword = str(df.job_title[df.id==starred_candidate_id])
-keyword_embeddings = model.encode([keyword])
-similarity = cosine_similarity(sen_embeddings,keyword_embeddings)
+starred = str(df.job_title[df.id==starred_candidate_id])
+starred_embeddings = model.encode([starred])
+similarity = cosine_similarity(sen_embeddings,keyword_embeddings+starred_embeddings)
 df['fit'] = similarity
 df.sort_values(by=['fit'],ascending=True).head()
