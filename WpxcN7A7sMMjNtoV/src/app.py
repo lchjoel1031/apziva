@@ -25,6 +25,6 @@ df.sort_values(by=['fit'],ascending=False).head()
 starred_candidate_id=17
 starred = str(df.job_title[df.id==starred_candidate_id])
 starred_embeddings = model.encode([starred])
-similarity = cosine_similarity(sen_embeddings,keyword_embeddings+starred_embeddings)
+similarity = cosine_similarity(sen_embeddings,(keyword_embeddings+starred_embeddings)/2.)
 df['fit'] = similarity
 df.sort_values(by=['fit'],ascending=True).head()
